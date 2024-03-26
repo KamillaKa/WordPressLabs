@@ -1,8 +1,6 @@
 <?php
 get_header();
 ?>
-
-
     <section class="hero">
         <div class="hero-text">
             <?php
@@ -27,11 +25,12 @@ get_header();
 
                 generate_article($products);
                 ?>
-            <article class="product all">
-                <a href="<?php echo get_category_link($subcategory->term_id); ?>">View all</a>
-            </article>
+                <article class="product all">
+                    <a href="<?php echo get_category_link($subcategory->term_id); ?>">View all</a>
+                </article>
                 <?php
-                endforeach;
+                wp_reset_postdata();
+            endforeach;
             ?>
         </section>
     </main>
