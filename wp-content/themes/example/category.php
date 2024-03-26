@@ -17,9 +17,7 @@ get_header();
         <section class="products">
             <h2><?php single_cat_title(); ?></h2>
             <?php
-            $args = ['tag' => 'featured', 'posts_per_page' => 3];
-            $products = new WP_Query($args);
-            generate_article($products);
+            generate_article($wp_query);
             ?>
         </section>
     </main>
