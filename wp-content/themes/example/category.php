@@ -7,7 +7,7 @@ get_header();
         <div class="hero-text">
             <?php
             echo '<h1>' . single_cat_title('', false) . '</h1>';
-            echo 'p' . category_description() . '</p>';
+            echo '<p>' . category_description() . '</p>';
             ?>
         </div>
 
@@ -15,7 +15,7 @@ get_header();
     </section>
     <main>
         <section class="products">
-            <h2><?php single_cat_title()?></h2>
+            <h2><?php single_cat_title(); ?></h2>
             <?php
             $args = ['tag' => 'featured', 'posts_per_page' => 3];
             $products = new WP_Query($args);
