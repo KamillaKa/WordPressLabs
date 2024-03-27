@@ -1,12 +1,25 @@
 <?php
 
-function search_filter($query) {
+function search_filter($query)
+{
     if ($query->is_search) {
         $query->set('category_name', 'products');
     }
     return $query;
 }
-add_filter('pre_get_posts','search_filter');
+
+add_filter('pre_get_posts', 'search_filter');
+
+function my_breadcrumb_title_swapper($title, $type, $id)
+{
+    if (in_array('home', $type)) {
+        $title = __('Home');
+    }
+
+    return $title;
+}
+
+add_filter('bcn_breadcrumb_title', 'my_breadcrumb_title_swapper', 3, 10);
 
 function theme_setup(): void
 {
@@ -18,7 +31,7 @@ function theme_setup(): void
         'width' => 200,
         'flex-height' => true,
     ]);
-    add_theme_support( 'html5', array( 'search-form' ) );
+    add_theme_support('html5', array('search-form'));
 
     // Set the default Post Thumbnail size
     set_post_thumbnail_size(200, 200, true); // 200px wide by 200px high, hard crop mode
