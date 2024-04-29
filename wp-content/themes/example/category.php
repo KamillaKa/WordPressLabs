@@ -1,4 +1,5 @@
 <?php
+global $wp_query;
 get_header();
 ?>
 
@@ -6,22 +7,21 @@ get_header();
     <section class="hero">
         <div class="hero-text">
             <?php
-            echo '<h1>' . single_cat_title('', false) . '</h1>';
+            echo '<h1>' . single_cat_title( '', false ) . '</h1>';
             echo '<p>' . category_description() . '</p>';
             ?>
         </div>
 
-        <img src="<?php echo get_random_post_image(get_queried_object_id()); ?>" alt="hero">
+        <img src="<?php echo get_random_post_image( get_queried_object_id() ); ?>" alt="hero">
     </section>
     <main>
         <section class="products">
             <h2><?php single_cat_title(); ?></h2>
             <?php
-            generate_article($wp_query);
+            generate_article( $wp_query );
             ?>
         </section>
     </main>
 
 <?php
-get_sidebar();
 get_footer();

@@ -5,16 +5,17 @@ get_header();
         <section class="products">
             <article class="single">
                 <?php
-                if (have_posts()) :
-                    while (have_posts()) :
+                if ( have_posts() ) :
+                    while ( have_posts() ) :
                         the_post();
-                        the_title('<h1>', '</h1>');
+                        the_title( '<h1>', '</h1>' );
                         the_content();
                     endwhile;
                 else :
-                    _e('Sorry, no posts matched your criteria.', 'esimerkki');
+                    _e( 'Sorry, no posts matched your criteria.', 'esimerkki' );
                 endif;
                 ?>
+                <?php echo do_shortcode( '[like_button]' ); ?>
             </article>
         </section>
     </main>
