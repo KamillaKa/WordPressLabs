@@ -6,11 +6,11 @@ const closeButton = document.querySelector('#close');
 const modalContent = document.querySelector('#modal-content');
 
 modalButtons.forEach(button => {
-    button.addEventListener('click', async (evt) => {
+    button.addEventListener('click', async (evt)  => {
         evt.preventDefault();
         const url = singlePost.ajax_url;
         const data = new URLSearchParams({
-            post_id: button.dataset.postId,
+            post_id: button.dataset.id,
             action: 'single_post',
         });
 
@@ -21,12 +21,12 @@ modalButtons.forEach(button => {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
         };
-
-        const response = fetch(url, options);
+        const response = await fetch(url, options);
         const post = await response.json();
+        console.log(post);
         modalContent.innerHTML = '';
-        modalContent.insertAdjacentHTML("afterbegin", post.title);
-        modalContent.insertAdjacentHTML('beforeend', post.content);
+        modalContent.insertAdjacentHTML('afterbegin', `<h2>${post.post_title}</h2>`);
+        modalContent.insertAdjacentHTML('beforeend', post.post_content);
         modal.showModal();
     });
 });
