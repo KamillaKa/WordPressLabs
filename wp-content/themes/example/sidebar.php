@@ -1,7 +1,7 @@
 <aside>
     <section class="search">
         <?php
-        get_search_form()
+        get_search_form();
         ?>
     </section>
     <section class="contact">
