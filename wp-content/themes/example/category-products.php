@@ -30,7 +30,7 @@ get_header();
                 $args = [
                     'post_type'      => 'post',
                     'cat'            => $subcategory->term_id,
-                    'posts_per_page' => 3,
+                    'posts_per_page' => 6,
                 ];
 
                 $products = new WP_Query( $args );

@@ -1,5 +1,8 @@
 <footer>
     <p>&copy; 2024 Kami</p>
+    <div class="footer-links">
+        <?php wp_nav_menu(['container' => 'nav', 'theme_location' => 'main-menu']); ?>
+    </div>
 </footer>
 </div>
 

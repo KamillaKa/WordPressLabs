@@ -85,9 +85,23 @@ footer {
     background-image: url('images/red.png');
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
 }
 
+footer div {
+    display: flex;
+    justify-content: center;
+}
 
+.footer-links a {
+    text-decoration: none;
+    color: var(--background-color);
+}
+
+.footer-links ul {
+    list-style-type: none;
+}
 
 .container {
     max-width: 1900px;
@@ -162,6 +176,11 @@ footer {
     color: var(--secondary-color);
 }
 
+.fa-solid:hover {
+    color: var(--secondary-color);
+    transition: 1.3s;
+}
+
 .products h2 {
     width: 100%;
     padding: 0 2rem;
@@ -229,6 +248,25 @@ footer {
     object-fit: cover;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 6px;
+}
+
+.alignnone {
+    padding-top: 10px;
+}
+
+#close {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+#close:hover {
+    cursor: pointer;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    transition: 2s;
 }
 
 .contact a {
