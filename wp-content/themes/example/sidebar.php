@@ -6,7 +6,9 @@
     </section>
     <section class="contact">
         <h2>Contact Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quos.</p>
-        <a href="#">Contact Us</a>
+        <p>Tehdään</p>
+        <p>Pesukarhuntie 7A, HELSINKI</p>
+        <p>pedro@email.com</p>
+        <a href="#"><i class="fa-solid fa-phone"> </i> Contact Us</a>
     </section>
 </aside>

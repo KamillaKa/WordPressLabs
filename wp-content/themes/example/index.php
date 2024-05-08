@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <?php
 get_header();
 ?>
@@ -23,7 +25,7 @@ get_header();
     </section>
     <main>
         <section class="products">
-            <h2>Featured Products</h2>
+            <h2>Vuokrattavat työt</h2>
             <?php
             $args = ['tag' => 'featured', 'posts_per_page' => 3];
             $products = new WP_Query($args);
