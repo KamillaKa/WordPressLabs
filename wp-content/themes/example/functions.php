@@ -71,3 +71,22 @@ add_action( 'wp_enqueue_scripts', 'script_setup' );
 require_once( __DIR__ . '/inc/article-function.php' );
 require_once( __DIR__ . '/inc/random-image.php' );
 require_once( __DIR__ . '/ajax-functions/single-post-function.php' );
+
+// display current year shortcode
+function display_current_year(): string {
+    return date('Y');
+}
+add_shortcode('current_year', 'display_current_year');
+
+function display_time_based_greeting(): string {
+    $hour = date('G');
+    if ($hour >= 5 && $hour < 12) {
+        $greeting = "Good morning!";
+    } elseif ($hour >= 12 && $hour < 18) {
+        $greeting = "Good afternoon!";
+    } else {
+        $greeting = "Good evening!";
+    }
+    return "<div class='time-based-greeting'>{$greeting} Welcome to our site!</div>";
+}
+add_shortcode('time_greeting', 'display_time_based_greeting');
